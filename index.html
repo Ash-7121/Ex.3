@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            gap: 10px;
+            height: 100vh;
+        }
+
+        /* Define class names for grid items and their expansion */
+        /*.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    border: 2px solid #8300fd;
+    text-align: center;
+    line-height: 1;
+}*/
+
+        /* Make specific items expand */
+        .grid-item-a {
+            grid-column: span 6;
+            grid-row: span 1;
+            text-align: center;
+            padding: 30px;
+            margin-top: 10px;
+            border: 2px solid;
+            border-left-color: white;
+            border-right-color: white;
+            font-size: 40px;
+        }
+
+        .grid-item-b {
+            grid-column: span 1;
+            grid-row: span 4;
+            text-align: center;
+            padding-top: 10px;
+            line-height: 1.5;
+            overflow: auto;
+            border: 2px solid;
+            border-left-color: white;
+            border-top-color: white;
+            border-bottom-color: white;
+        }
+
+        .grid-item-c {
+            grid-column: span 4;
+            grid-row: span 4;
+            text-align: left;
+            padding-top: 10px;
+            line-height: 1.5;
+            overflow: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+           
+        }
+
+        .grid-item-d {
+            grid-column: span 1;
+            grid-row: span 4;
+            overflow: auto;
+            border: 2px solid;
+            border-right-color: white;
+            border-top-color: white;
+            border-bottom-color: white;
+            align-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200 px;
+        }
+
+        .grid-item-e {
+            grid-column: span 6;
+            grid-row: span 1;
+            text-align: left;
+            padding: 10px;
+            font-size: 20px;
+            border: 2px solid;
+            border-left-color: white;
+            border-right-color: white;
+            border-bottom-color: white;
+        }
+
+        input:checked {
+            accent-color: rgb(216, 145, 40);
+        }
+
+        ul.no-bullets {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        /* h2{
+
+        }*/
+        h3 {
+            font-size: 17px;
+        }
+        .grid-wrapper {
+            display: grid;
+          
+            grid-template-rows: 3;
+            gap: 10px; /* Space between grid items */
+            width: 150px; /* Fixed width for the grid */
+            height: 400px; /* Fixed height for the grid */
+        }
+        
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #two {
+            display: none; /* Initially hide the second image */
+        }
+        .image-container:hover #one {
+            display: none; /* Hide the first image on hover */
+        }
+
+        .image-container:hover #two {
+            display: block; /* Show the second image on hover */
+        }
+
+        a:visited {
+            color: #dc7b43;
+        }
+
+        a:link {
+            color: black;
+        }
+
+        a:active {
+            color: black;
+        }
+
+        a:hover {
+            color: rgb(238, 242, 243);
+            border-radius: 35px;
+            background-color:#dc7b43;
+            padding: 5px 4px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <!-- Use the new class names for grid items -->
+        <div class="grid-item grid-item-a">
+            <div class="box">
+                <span class="text">
+                    <h2>Apple Tart</h2>
+                </span>
+            </div>
+        </div>
+        <div class="grid-item grid-item-b">
+            <div class="box">
+                <span class="text">
+                    <form>
+                        <span class="text" style="line-height: 2">
+                            <h1><u>Ingredients</u></h1>
+                        </span>
+                        <ul class="no-bullets">
+
+                            <span class="text">
+                                <h3><u>Filling</u></h3>
+                            </span>
+                            <li><input type="checkbox" checked> 5 Apples</li>
+                            <li><input type="checkbox" checked> 1/3 c. brown sugar </li>
+                            <li><input type="checkbox" checked> 1 tsp. ground cinnamon </li>
+                            <li><input type="checkbox" checked> Juice of 1/2 lemon </li>
+                            <li><input type="checkbox" checked> 1 tsp. pure vanilla extract </li>
+                            <span class="text">
+                                <h3><u>Crust</u></h3>
+                            </span>
+
+                            <li><input type="checkbox" checked> 1 1/3 c. all-purpose flour </li>
+                            <li><input type="checkbox" checked> 1/4 c. packed brown sugar </li>
+                            <li><input type="checkbox" checked> 1/2 tsp. kosher salt </li>
+                            <li><input type="checkbox" checked> 1/4 tsp. ground cinnamon </li>
+                            <li><input type="checkbox" checked> 10 tbsp. melted butter </li>
+                            <li><input type="checkbox" checked> 1 tbsp. granulated sugar </li>
+                            <li><input type="checkbox" checked> 2 tbsp. cube-cut butter</li>
+                            <li><input type="checkbox" checked> Melted apricot preserves</li>
+
+                        </ul>
+                    </form>
+                </span>
+            </div>
+        </div>
+        <div class="grid-item grid-item-c">
+            <div class="box">
+                <span class="text" style="line-height: 2">
+                    <h1><u>Directions</u></h1>
+                    <ol type="1">
+                        <li>Preheat oven to 350°. In a large bowl, toss apples, brown sugar, lemon juice, cinnamon, vanilla, and salt together. 
+                        </li>
+                        <li>In a large bowl, whisk together flour, sugar, salt, and cinnamon. Add melted butter and stir until dough forms. Press mixture into a 10” or 11” tart pan with a removable bottom, pressing until dough is smooth. 
+                        </li>
+                        <li>Arrange apples over crust, sprinkle with granulated sugar and dot top with butter. Bake until crust is golden and apples are tender, about 1 hour. 
+                        </li>
+                        <li>Brush with melted apricot preserves and let cool slightly before slicing and serving.
+                        </li>
+                      </ol>  
+                </span>
+            </div>
+        </div>
+        <div class="grid-item grid-item-d">
+            <div class="box">
+                <div class="grid-wrapper">
+                    
+                    <div class="grid-item image-container">
+                        <img id='one' src='appletart.jpeg'>
+                        <img id='two' src='delish-apple-tart-vertical-2-1538084889.jpeg'>
+                    </div>
+                    <div class="grid-item image-container">
+                        <img id='one' src='french-apple-tart-tarte-aux-pommes-2394428_hero-01-f639dbe387234c93affa9b681ae5d9c2.jpeg'>
+                        <img id='two' src='mini-apple-tarts-tartlets-1.jpeg'>
+                    </div>
+                    <div class="grid-item image-container">
+                        <img id='one' src='Alsatian-Apple-Tart-Flatlay.jpeg'>
+                        <img id='two' src='Apple-Tart-16-1200x1200-1.jpeg'>
+                    </div>          
+            </div>
+            </div>
+        </div>
+        <div class="grid-item grid-item-e">
+            <div class="box">
+                <span class="text">
+                    <h1><u>Notes:</u></h1>
+                    <div class="grid-item" style="text-align: center"><a href="https://www.delish.com/cooking/recipe-ideas/a23364812/apple-tart-recipe/"
+                        target=”_blank”>Apple Pie by Moshamama</a></div>
+                </span>
+            </div>
+        </div>
+
+
+        <!-- Add more grid items with appropriate class names -->
+    </div>
+</body>
+
+</html>
